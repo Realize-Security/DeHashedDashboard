@@ -1,12 +1,10 @@
-import type { SearchRequest, SearchResponse } from "@shared/types";
-import { dehashedBaseUrl, dehashedApiKeyName, dehashedApiKey } from "@shared/config";
+import type {SearchRequest, SearchResponse} from "@shared/types";
 
 export const v2Search = async (request: SearchRequest): Promise<SearchResponse> => {
-    const res = await fetch(dehashedBaseUrl()+"/v2/search", {
+    const res = await fetch("http://localhost:3001/api/dehashed-search", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
-            [`${dehashedApiKeyName()}`]: dehashedApiKey(),
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({
             page: request.page,
