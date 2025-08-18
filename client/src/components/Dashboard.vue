@@ -34,10 +34,6 @@ const searchData = async () => {
     loading.value = false;
   }
 };
-
-onMounted(() => {
-  searchData();
-});
 </script>
 
 <template>
