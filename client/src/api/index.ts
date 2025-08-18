@@ -20,5 +20,9 @@ export const v2Search = async (request: SearchRequest): Promise<SearchResponse> 
         throw new Error(`HTTP error! status: ${res.status}`);
     }
 
-    return await res.json() as SearchResponse;
+    const json = await res.json();
+    if (!json.success) {
+        throw new Error('API request failed');
+    }
+    return json.data as SearchResponse;
 };
