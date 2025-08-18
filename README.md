@@ -1,5 +1,5 @@
-# Vue 3 + TypeScript + Vite
+# Vue 3 + TypeScript + Vite + Express
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+> Note: This is a work in progress and does NOT include authentication. 
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+An example Vue.js PoC for integrating with the Dehashed API. The project uses an Express server backend to route API rerquests from the Vue.js UI to query Dehashed without exposing the Dehashed API key to the client. Both server and client use a shared TypeScript repos which includes common types for API request and responses.
