@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import type { SearchRequest, SearchResponse } from '@shared/types'
 import {v2Search} from "../api";
 
@@ -26,7 +26,7 @@ const searchData = async () => {
   try {
     loading.value = true;
     error.value = null;
-    results.value= await v2Search(request);
+    results.value = await v2Search(request);
   } catch (err) {
     error.value = 'Failed to fetch data. Please try again.';
     console.error(err);
@@ -82,9 +82,9 @@ const searchData = async () => {
         <tbody>
         <tr v-for="entry in results.entries" :key="entry.id">
           <td>{{ entry.id }}</td>
-          <td>{{ entry.name.join(', ') }}</td>
-          <td>{{ entry.username.join(', ') }}</td>
-          <td>{{ entry.email.join(', ') }}</td>
+          <td>{{ entry.name?.join(', ') || '' }}</td>
+          <td>{{ entry.username?.join(', ') || '' }}</td>
+          <td>{{ entry.email?.join(', ') || '' }}</td>
         </tr>
         </tbody>
       </table>
