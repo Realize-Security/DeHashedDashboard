@@ -38,7 +38,7 @@ const searchData = async () => {
 
 <template>
   <div class="dashboard">
-    <h1>Dashboard</h1>
+    <h1>Dehashed Query Dashboard</h1>
     <div class="search-form">
       <label>
         Query:
