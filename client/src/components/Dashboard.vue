@@ -11,7 +11,7 @@ const wildcard = ref<boolean>(false);
 const de_dupe = ref<boolean>(true);
 
 const results = ref<SearchResponse | null>(null);
-const loading = ref(true);
+const loading = ref(false);
 const error = ref<string | null>(null);
 
 const searchData = async () => {
